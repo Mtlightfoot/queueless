@@ -2,7 +2,7 @@
 import HomePage from './pages/HomePage'
 
 // Component Imports
-import NavBar from './components/navBar'
+import NavBar from './components/NavBar'
 
 // SCSS imports
 import './main.scss'
