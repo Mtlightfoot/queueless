@@ -1,0 +1,97 @@
+@import './bootstrap/scss/bootstrap';
+
+@font-face {
+    font-family: 'authentic-sans-60';
+    src: url('./fonts/authentic-sans-210330/desktop/authentic-sans-60.otf') format("opentype");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+// Fonts
+$logo-font: "Major Mono Display", serif;
+$font-authentic-sans-60: authentic-sans-60, sans-serif;
+
+// Colours
+$primary-background-colour: #FFFFFF;
+$secondary-background-colour: #F1F1F1;
+$primary-text-colour: #000000;
+$secondary-text-colour: #888888;
+$icon-colour: #B75252;
+
+
+* {
+    font-family: $font-authentic-sans-60;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $primary-background-colour;
+}
+
+h1 {
+    color: $primary-text-colour;
+}
+
+.pageContainer {
+    padding-top: 50px;
+}
+
+.sectionTitles {
+    font-size: .6875rem;
+    color: $icon-colour;
+    letter-spacing: .04em;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    border-top: 1px solid $icon-colour;
+    padding-top: 4px;
+    width: 10vw;
+    text-align: left;
+}
+
+// Home Page stylings
+
+.themeParkNameText {
+    font-size: 62px;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    font-weight: 500;
+    vertical-align: baseline;
+}
+
+// NavBar stylings
+
+.navBar {
+    background-color: $secondary-background-colour;
+}
+
+.navBarText {
+    color: $primary-text-colour;
+    font-family: $logo-font;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 0.5em;
+}
+
+//Search Box stylings 
+
+.searchBox {
+    margin-bottom: 50px;
+}
+
+// Table Stylings 
+
+th {
+    border: none;
+}
+
+td {
+    border-bottom: 1px solid black;
+}
+
+.tableHeaders {}
+
+.tableContents {
+    color: $primary-text-colour;
+}
