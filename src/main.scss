@@ -76,8 +76,19 @@ h1 {
 
 //Search Box stylings 
 
-.searchBox {
+.searchBoxWrapper {
     margin-bottom: 50px;
+
+    .searchBox {
+        border-radius: 2px;
+    }
+
+    .searchBox:active,
+    .searchBox:focus {
+        box-shadow: 0 0 0 0.25rem rgba(183, 82, 82, 0.25);
+        border: 1px solid transparent;
+        outline: none;
+    }
 }
 
 // Table Stylings 
