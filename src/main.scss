@@ -26,7 +26,11 @@ $icon-colour: #B75252;
 body {
     margin: 0;
     padding: 0;
-    background-color: $primary-background-colour;
+    // background-color: $primary-background-colour;
+    background-image: url('./rollercoaster.jpg');
+    background-size: contain;
+    background-position: 1000px 485px;
+    background-repeat: no-repeat;
 }
 
 h1 {
@@ -53,7 +57,7 @@ h1 {
 // Home Page stylings
 
 .themeParkNameText {
-    font-size: 62px;
+    font-size: 40px;
     line-height: 0.92;
     letter-spacing: -0.04em;
     font-weight: 500;
@@ -70,13 +74,12 @@ h1 {
     color: $primary-text-colour;
     font-family: $logo-font;
     font-weight: 500;
-    font-size: 30px;
-    letter-spacing: 0.5em;
+    font-size: 25px;
+    letter-spacing: 0.2em;
 }
 
 //Search Box stylings 
-
-.searchBoxWrapper {
+.searchBoxRow {
     margin-bottom: 50px;
 
     .searchBox {
@@ -89,6 +92,7 @@ h1 {
         border: 1px solid transparent;
         outline: none;
     }
+
 }
 
 // Table Stylings 

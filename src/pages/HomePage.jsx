@@ -60,8 +60,9 @@ function HomePage() {
 
     return (
         <Container className='pageContainer'>
-            <Row>
-                <Col fluid>
+            <Row className='searchBoxRow'>
+
+                <Col md={6}>
 
                     <InputGroup className='searchBoxWrapper'>
                         <Form.Control
@@ -86,9 +87,7 @@ function HomePage() {
                     </InputGroup>
 
                 </Col>
-            </Row>
 
-            <Row>
                 <Col md={6}>
                     <h6 className='sectionTitles'>Theme Park</h6>
                     {searchResults ? (
@@ -96,6 +95,10 @@ function HomePage() {
                     ) : (<p className='themeParkNameText'>Waiting for Theme Park</p>
                     )}
                 </Col>
+            </Row>
+
+            <Row>
+
                 <Col md={6}>
 
                     <Table striped hover>
@@ -123,6 +126,10 @@ function HomePage() {
                             </tr>
                         </tbody>
                     </Table>
+
+                </Col>
+
+                <Col md={6}>
 
                     <QueueTimeTable />
 

@@ -5,7 +5,14 @@ function NavBar() {
     return (
         <Navbar expand="lg" className="navBar">
             <Container>
-                <Navbar.Brand href="#" className='navBarText'>Queue Less</Navbar.Brand>
+                <Navbar.Brand href="#" className='navBarText'>
+                    <img
+                        alt=""
+                        src="/loop-icon-big.png"
+                        width="45"
+                        height="45"
+                        className="d-inline-block align-center"
+                    />{' '}Queue Less</Navbar.Brand>
             </Container>
         </Navbar>
     );
