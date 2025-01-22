@@ -4,12 +4,14 @@ import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
 
 // Component imports
 import QueueTimeTable from '../components/QueueTimeTable';
 
 import API from '../utils/WaitTimeApi';
 import { useState, useEffect } from 'react';
+// import QueueList from '../components/QueueList';
 
 function HomePage() {
 
@@ -31,19 +33,30 @@ function HomePage() {
         console.log(searchResults);
     }, [searchResults]);
 
-    const [themeParkName, setThemeParkName] = useState("Waiting for Theme Park");
-
-    useEffect(() => {
-        setThemeParkName(themeParkName);
-    }, [themeParkName]);
-
-    function setData() {
+    function getData() {
         query(input);
+        setQueueTimes(searchResults.result.liveData);
     }
 
-    function setPageData() {
-        setThemeParkName(searchResults.result.name);
-    }
+    // function setQueueList() {
+    //     return (
+    //         <>
+    //             {queueTimes.map(function (data) {
+    //                 return (
+    //                     <tr>
+    //                         <td>{data.name}</td>
+    //                     </tr>
+    //                 )
+    //             })}
+    //         </>
+    //     )
+    // }
+
+    // const [queueTimes, setQueueTimes] = useState([])
+
+    // useEffect(() => {
+    //     console.log(queueTimes);
+    // }, [queueTimes]);
 
     return (
         <Container className='pageContainer'>
@@ -63,8 +76,7 @@ function HomePage() {
                         />
                         <Button
                             onClick={() => {
-                                setData();
-                                setPageData();
+                                getData();
                             }}
                             className=''
                             variant="outline-secondary"
@@ -79,9 +91,42 @@ function HomePage() {
             <Row>
                 <Col md={6}>
                     <h6 className='sectionTitles'>Theme Park</h6>
-                    <p className='themeParkNameText'>{themeParkName}</p>
+                    {searchResults ? (
+                        <p className='themeParkNameText'>{searchResults.result.name}</p>
+                    ) : (<p className='themeParkNameText'>Waiting for Theme Park</p>
+                    )}
                 </Col>
-                <Col md={6}><QueueTimeTable /></Col>
+                <Col md={6}>
+
+                    <Table striped hover>
+                        <thead className='tableHeaders'>
+                            <tr>
+                                <th><h6 className='sectionTitles'>Ride Name</h6></th>
+                                <th><h6 className='sectionTitles'>Queue Time</h6></th>
+                            </tr>
+                        </thead>
+                        <tbody className='tableContent'>
+                            <tr>
+                                {searchResults ? (
+                                    <>
+
+                                        <td>{searchResults.result.liveData[6].name}</td>
+                                        <td>{searchResults.result.liveData[6].status}</td>
+
+                                    </>
+                                ) : (
+                                    <>
+                                        <td>Waiting for ride</td>
+                                        <td>Waiting for queue time</td>
+                                    </>
+                                )}
+                            </tr>
+                        </tbody>
+                    </Table>
+
+                    <QueueTimeTable />
+
+                </Col>
             </Row>
         </Container>
     );
