@@ -11,6 +11,7 @@ import QueueTimeTable from '../components/QueueTimeTable';
 
 import API from '../utils/WaitTimeApi';
 import { useState, useEffect } from 'react';
+import DropDownMenu from '../components/DropDownMenu';
 // import QueueList from '../components/QueueList';
 
 function HomePage() {
@@ -85,6 +86,8 @@ function HomePage() {
                             Search
                         </Button>
                     </InputGroup>
+
+                    <DropDownMenu />
 
                 </Col>
 

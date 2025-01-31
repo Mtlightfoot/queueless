@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "Alton Towers",
+        "slug": "altontowersresort"
+    },
+    {
+        "id": 2,
+        "name": "Thorpe Park",
+        "slug": "thorpeparkresort"
+    },
+    {
+        "id": 3,
+        "name": "LEGOLAND Winsor",
+        "slug": "legolandwindsorresort"
+    },
+    {
+        "id": 4,
+        "name": "Chessington Worlds of Adventures",
+        "slug": "chessingtonworldofadventuresresort"
+    },
+    {
+        "id": 5,
+        "name": "Paultons Park",
+        "slug": "paultonspark"
+    }
+]
